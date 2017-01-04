@@ -1,0 +1,15 @@
+{
+  "name": "timeleft",
+  "version": "0.0.1",
+  "description": "just a socket app to show how much time left for smth",
+  "main": "server.js",
+  "author": "mjt",
+  "license": "mjt the great :P",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.7.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}

@@ -1,0 +1,29 @@
+body {
+	background: #fff;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.time {
+	font-size: 4em;
+	text-align: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	/* bring your own prefixes */
+	transform: translate(-50%, -50%);
+}
+}
+
+.time .blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+.winner {
+	display: none;
+}
