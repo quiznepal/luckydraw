@@ -2,14 +2,12 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var time;
+var time, timeEnd = false, isLuckyDraw = false,
+	luckyOne = 0;
 
 app.use(express.static(__dirname +'/public'));
 
 app.get('/updatetime/:hrs/:min',function (req,res) {
-	// if (typeof req.param2 === 'undefined') {
-	// 	param2 = 0;
-	// }
 
 	var hrs = (typeof req.param.hrs === 'string' ? parseInt(req.params.hrs) : 0),
 		min = (typeof req.param.min === 'string' ? parseInt(req.params.min) : 0);
@@ -20,6 +18,7 @@ app.get('/updatetime/:hrs/:min',function (req,res) {
 
 	// console.log(req.params.param1);
 	time = Math.floor((Date.now())/1000)+hrs*60*60+min*60;
+	timeEnd = false;
 	res.send("yo");
 
 });
@@ -33,7 +32,7 @@ time = Math.floor((Date.now()+15000)/1000);
 
 io.on('connection',function (socket) {
 	console.log('who connected now?? ');
-	init();
+	(timeEnd ? afterTimeEnd() : init());
 
 	socket.on('disconnect',function () {
 		console.log('damm s/he(*) got disconnected');
@@ -48,9 +47,13 @@ function init() {
 		io.emit("time", tmObj);
 		if (diffTime > 0) {
 			init();
+		} else {
+			timeEnd = true;
+			afterTimeEnd();
+
 		}
 	},1000);
-}
+};
 
 function timehs(time) {
 	var sec =0,min=0,hrs=0,day=0
@@ -76,4 +79,22 @@ function timehs(time) {
 		min : min,
 		sec : sec
 	}
+};
+
+luckyDraw = function () {
+	
+	if (isLuckyDraw) {
+		return luckyOne;
+	}
+
+	luckyOne = Math.floor((Math.random() * 100));
+
+	isLuckyDraw = true;
+	return luckyOne;
 }
+
+afterTimeEnd = function () {
+	var lucky = luckyDraw();
+	
+	io.emit("after time end", lucky);
+};

@@ -6,7 +6,7 @@ body {
 }
 
 .time {
-	font-size: 4em;
+	display: none;
 	text-align: center;
 	position: fixed;
 	top: 50%;
@@ -14,6 +14,9 @@ body {
 	/* bring your own prefixes */
 	transform: translate(-50%, -50%);
 }
+
+.time span {
+	font-size: 4em;
 }
 
 .time .blink_me {
