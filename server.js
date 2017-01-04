@@ -5,6 +5,8 @@ var io = require('socket.io')(http);
 var time, timeEnd = false, isLuckyDraw = false,
 	luckyOne = 0;
 
+var names = require('./first-names.json');
+
 app.use(express.static(__dirname +'/public'));
 
 app.get('/updatetime/:hrs/:min',function (req,res) {
@@ -87,7 +89,9 @@ luckyDraw = function () {
 		return luckyOne;
 	}
 
-	luckyOne = Math.floor((Math.random() * 100));
+	var len = names.length;
+
+	luckyOne = Math.floor((Math.random() * len));
 
 	isLuckyDraw = true;
 	return luckyOne;
@@ -96,5 +100,5 @@ luckyDraw = function () {
 afterTimeEnd = function () {
 	var lucky = luckyDraw();
 	
-	io.emit("after time end", lucky);
+	io.emit("after time end", {name : names[luckyOne]});
 };

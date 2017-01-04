@@ -1,5 +1,8 @@
 $(function () {
-	var $time = $('.time');
+	var $time = $('.time'),
+		animationend = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+		$winner = $(".winner");
+
 	var socket = io();
 	socket.on('time',function (msg) {
 		$time.show();
@@ -20,7 +23,17 @@ $(function () {
 
 	socket.on('after time end', function (msg) {
 		$time.hide();
-		$('.winner').show().text(msg);
-	})
+		$('.winner h1').text(msg.name);
+		$('.winner').show();
+		$winner.find('h1').addClass('animated flip').one(animationend,function () {
+		$winner.find('.congrats').css("visibility", "visible").addClass('animated bounceInUp').one(animationend,function () {
+			$winner.find('.stars').css("visibility", "visible").addClass('animated infinite flash');
+		})
+	});
+	
+
+	});
+	
+	
 
 });

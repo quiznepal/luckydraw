@@ -1,8 +1,9 @@
 body {
-	background: #fff;
+	/*background: #fff;*/
 	margin: 0;
 	padding: 0;
 	width: 100%;
+	/*background: #f0f0f0;*/
 }
 
 .time {
@@ -29,4 +30,23 @@ body {
 
 .winner {
 	display: none;
+	text-align: center;
+	margin-top: 5%;
+	/*background: #fff;*/
+}
+
+.winner img {
+	/*display: none;*/
+	visibility: hidden;
+}
+
+.winner img.stars {
+	width: 100%;
+	top: 0;
+	left: 0;
+	/*position: absolute;*/
+}
+
+.winner img.congrats {
+	width: 100%;
 }
