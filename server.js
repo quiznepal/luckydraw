@@ -30,7 +30,7 @@ http.listen(3030,function () {
 })
 console.log(Date.now());
 
-time = Math.floor((Date.now()+15000)/1000);
+time = Math.floor((Date.now()+100000)/1000);
 
 io.on('connection',function (socket) {
 	console.log('who connected now?? ');
