@@ -25,7 +25,7 @@ $(function () {
 		var smth = "";
 		console.log(data);
 		for (var i = 0; i < data.length; i++) {
-			smth += "<a href="+data[i].profile+">"+data[i].name+"</a>";
+			smth += "<a href='facebook.com/"+data[i].id+"'>"+data[i].name+"</a>";
 		}
 		$(".correctAns").html(smth);
 	})
