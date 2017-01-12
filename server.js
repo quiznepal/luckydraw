@@ -30,7 +30,8 @@ http.listen(3030,function () {
 })
 console.log(Date.now());
 
-time = Math.floor((Date.now()+100000)/1000);
+// time = Math.floor((Date.now()+100000)/1000);
+time = toTimestamp('01/12/2017 11:31:30')
 
 io.on('connection',function (socket) {
 	console.log('who connected now?? ');
@@ -102,3 +103,9 @@ afterTimeEnd = function () {
 	
 	io.emit("after time end", {name : names[luckyOne]});
 };
+
+
+function toTimestamp(strDate){
+ var datum = Date.parse(strDate);
+ return datum/1000;
+}

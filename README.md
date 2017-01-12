@@ -13,6 +13,9 @@ yarn install # or use: npm install
 node server.js
 ```
 
+## TODO
+- ask a time to have a lucky draw and create a separate link for it
+
 ## License (GPL)
 
 This program is free software: you can redistribute it and/or modify
