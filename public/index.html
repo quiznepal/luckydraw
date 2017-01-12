@@ -7,30 +7,72 @@
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1099542380129185";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="container">
 	<div class="row">
-	<div class="time">
-		<div class="">time remaining for lucky draw</div>
-		<span class="day"></span>
-		<span class="hours"> </span>
-		<span class="blink_me hours_blink"> : </span>
-		<span class="minute"></span>
-		<span class="blink_me"> : </span>
-		<span class="second"></span>
+		<div class="col-md-6">
+			<div class="time ">
+				<div class="">time remaining for lucky draw</div>
+				<span class="day"></span>
+				<span class="hours"> </span>
+				<span class="blink_me hours_blink"> : </span>
+				<span class="minute"></span>
+				<span class="blink_me"> : </span>
+				<span class="second"></span>
 
-	</div>
+			</div>
 
-	<div class="col-md-4 col-md-offset-4 winner">
-		<img src="images/stars.gif" alt="stars" class="stars">
-		<h1>winner</h1>
-		<img src="images/congrats.gif" alt="congratulation" class="congrats">
-	</div>
+			<div class="col-md-6 col-md-offset-3 winner">
+				<img src="images/stars.gif" alt="stars" class="stars">
+				<div class="lucky1"><a href="" ><h1>winner</h1></a></div>
+				<div class="lucky2"><a href="" ><h1>winner</h1></a></div>
+				<img src="images/congrats.gif" alt="congratulation" class="congrats">
+			</div>
+		</div>
 
-	<div class="correctAns"></div>
-	</div>
+		<!-- <div class="facebook col-md-6">
+			<h3>Help naruto to be listed</h3>
+			<div class="fb-post" data-href="https://www.facebook.com/quizdaily.nepal/posts/1885296098351277:0" data-width="400" data-show-text="true"><blockquote cite="https://www.facebook.com/quizdaily.nepal/posts/1885296098351277:0" class="fb-xfbml-parse-ignore"><p>Help Naruto reach Otaku festival, can you?
+				Two lucky winners  wil be given Otaku Jatra tickets.
+				like this page too Quiz Nepal
+		
+				link of event (otaku jatra) : https://www.facebook.com/events/1740561469597987/</p>Posted by <a href="https://www.facebook.com/quizdaily.nepal/">Quiz Nepal</a> on&nbsp;<a href="https://www.facebook.com/quizdaily.nepal/posts/1885296098351277:0">Tuesday, January 10, 2017</a></blockquote></div>
+			</div>
+		
+		</div> -->
+		<div class="col-md-6">
+			<h3>Help naruto to be listed</h3>
+			<a href="https://www.facebook.com/quizdaily.nepal/photos/a.1599379813609575.1073741828.1598120003735556/1885296098351277/">click here to check the question</a>
+			<div class="row">
+				<h3>Admins favorite</h3>
+				<img src="https://scontent-sin6-1.xx.fbcdn.net/v/t1.0-9/15895143_1301404889882489_6596578523923502337_n.jpg?oh=b83d7d8ebfe0b5786e380a89918a21c7&oe=58DF0B4D" alt="best graphic ans" class="col-md-12">
+			</div>
+		</div>
+		<div class="row">
+			<div class="correctNames">
+				<h2>list of people with correct answer</h2>
+			</div>
+			<div class="correctAns">
+				hello
+			</div>
+		</div>
+
+</div>
+<div>
+	<h1><a href="https://www.facebook.com/events/1740561469597987/">click here to see about the event</a>
+	</h1>
+	<img src="https://scontent-sin6-1.xx.fbcdn.net/v/t31.0-8/15585095_1386874147990849_4308924135740814254_o.jpg?oh=2d7a772d1b8bd1c691d26cdcf6d1378e&oe=58D8ACB7" alt="" width="100%">
 </div>
 
-	<script src="jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="main.js"></script>
 </body>

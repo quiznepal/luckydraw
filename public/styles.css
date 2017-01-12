@@ -7,13 +7,13 @@ body {
 }
 
 .time {
-	display: none;
+	/*display: none;*/
 	text-align: center;
-	position: fixed;
+	position: relative;
 	top: 50%;
 	left: 50%;
 	/* bring your own prefixes */
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, 40%);
 }
 
 .time span {
@@ -49,4 +49,23 @@ body {
 
 .winner img.congrats {
 	width: 100%;
+}
+
+.correctNames {
+	text-align: center;
+	border-top: 1px solid #c9c9c9;
+}
+
+.correctAns {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.correctAns a {
+	display: inline-block;
+	width: 100px;
+	border: 1px solid #28b5f5;
+	border-radius: 10px;
+	text-align: center;
+	margin-right: 5px;
 }
